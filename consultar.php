@@ -27,7 +27,7 @@ if(mysqli_num_rows($resultado) > 0){
                 <th>Estoque</th>
                 <th>Valor (R$)</th>
                 <th>Categoria</th>
-                <th>editar</th>
+                <th>...</th>
                 <th>Excluir</th>
             </tr>
          <?php
@@ -38,22 +38,12 @@ if(mysqli_num_rows($resultado) > 0){
                  <td><?php echo $linha["estoque"];?></td>
                  <td><?php echo $linha["valor"];?></td>
                  <td><?php echo $linha["categoria"];?></td>
-                 <td><img src="editar.png" width=30 height=30></td>
+                 <td><a href="editar.php?id=<?php echo $linha["idproduto"];?>"><img src="editar.png" width=30 height=30></a></td>
                  <td><a href="#" onclick="excluir(<?php echo $linha['idproduto'];?>)"><img src="lixeira.png" width=30 height=30></a></td>              
          <?php }
          ?>
          </table>
-
-           
-        
-            
-            
-            
-        
-            
-
-
-        
+       
 <?php
 }else {
     echo "Nenhum Produto Encontrado!!!!!!!!!!!!!!!!";
